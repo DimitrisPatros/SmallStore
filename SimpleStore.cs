@@ -1,47 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SmallStore
+﻿namespace SmallStore
 {
-    class SimpleStore : IStore
+    public class SimpleStore : IStore
     {
-        //private double _totalBuyBalance;
-        //private double _totalSellBalance;
+        public double TotalBuyBalance { get; set; }
+        public double TotalSellBalance { get; set; }
 
-        public Product Product { get; set; }
-        public double Revenue { get; private set; }
-        public double TotalSellBalance { get; private set; }
-        public double TotalBuyBalance { get; private set; }
-
-        //public SimpleStore(Product product)
-        //{
-        //    Product =product;
-        //    Revenue = 0;
-        //}
-
-        public double Buy(double price)
+        public void Buy(Product product)
         {
-            TotalBuyBalance += Product.PriceWhenBuy;
-            return TotalBuyBalance;
+            TotalBuyBalance += product.PriceWhenBuy;
         }
 
-        public double Sell()
+        public void Sell(Product product)
         {
-            TotalSellBalance += Product.PriceWhenSell;
-            return TotalBuyBalance;
+            TotalSellBalance += product.PriceWhenSell;
         }
 
         public double GetRevenue()
         {
-            Revenue = TotalSellBalance - TotalBuyBalance;
-            return Revenue;
-        }
-
-        public override string ToString()
-        {
-            return $"This Store revenue is {TotalSellBalance}, also the expenses are{TotalBuyBalance} " +
-                $"\n Total Profit : {Revenue}";
+            return TotalSellBalance - TotalBuyBalance;
         }
     }
 }

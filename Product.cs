@@ -1,10 +1,10 @@
 ﻿namespace SmallStore
 {
     //POCO Class
-    class Product
+    public class Product
     {
-        private int Id { get; set; }
-        private string ProductName { get; set; }
+        public int Id { get; set; }
+        public string ProductName { get; set; }
         public double PriceWhenBuy { get; set; }
         public double PriceWhenSell { get; set; }
 
