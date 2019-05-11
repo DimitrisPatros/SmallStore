@@ -5,5 +5,6 @@
         void Buy(Product product);
         void Sell(Product product);
         double GetRevenue();
+        void GetInventory();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SmallStore
+﻿using System;
+
+namespace SmallStore
 {
     public class SimpleStore : IStore
     {
@@ -18,6 +20,11 @@
         public double GetRevenue()
         {
             return TotalSellBalance - TotalBuyBalance;
+        }
+
+        public void GetInventory()
+        {
+            Console.WriteLine("There is no inventory");
         }
     }
 }
